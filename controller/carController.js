@@ -86,4 +86,4 @@ export const deleteCar = async (req, res, next) => {
     res.send("delete car")
 }
 
-const modalContentright = document.getElementById('modal-content-right');
+
