@@ -6,6 +6,10 @@ const carSchema = new mongoose.Schema({
         required: [true, "Car name is required"],
         trim: true,
     },
+    carImg: {
+        type: String,
+        required: [true, "Image is required"],
+    },
     passengers: {
         type: Number,
         required: [true, "Passengers is required"],

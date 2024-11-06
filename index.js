@@ -6,6 +6,8 @@ import carRouter from "./router/carRoutes.js";
 dotenv.config();
 
 const app = express();
+
+app.use("/assets", express.static("assets"))
 app.use(express.json());
 
 app.get("/", (req, res) => {
