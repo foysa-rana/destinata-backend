@@ -2,6 +2,7 @@
 import express from "express";
 import dotenv from "dotenv";
 import connect from "./db/connectDB.js";
+import carRouter from "./router/carRoutes.js";
 dotenv.config();
 
 const app = express();
@@ -10,6 +11,9 @@ app.use(express.json());
 app.get("/", (req, res) => {
     res.send("Destinara Backend");
 });
+
+// car routes
+app.use("/api/v1/car", carRouter)
 
 const port = process.env.PORT || 5000;
 
