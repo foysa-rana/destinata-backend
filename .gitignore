@@ -30,3 +30,6 @@ coverage/
 .vscode/
 .idea/
 *.sublime-workspace
+
+# filse
+test.js

@@ -1,5 +1,6 @@
 "use strict";
 import express from "express";
+import cors from "cors";
 import dotenv from "dotenv";
 import connect from "./db/connectDB.js";
 import carRouter from "./router/carRoutes.js";
@@ -9,6 +10,7 @@ const app = express();
 
 app.use("/assets", express.static("assets"))
 app.use(express.json());
+app.use(cors());
 
 app.get("/", (req, res) => {
     res.send("Destinara Backend");
