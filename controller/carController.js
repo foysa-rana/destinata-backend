@@ -19,6 +19,8 @@ export const createCar = async (req, res, next) => {
 export const getCar = async (req, res, next) => {
     try {
         const {id} = req.params;
+        const query = req.query;
+        const distance = Number(query.distance)
         const car = await carModel.findById(id);
         if(!car) {
             res.status(404).json({message: "there is no such car available"});
@@ -34,7 +36,8 @@ export const getCar = async (req, res, next) => {
                 carName: car.carName,
                 passengers: car.passengers,
                 suitcases: car.suitcases,
-                rate: car.suitcases,
+                rate: car.rate,
+                totalRate: car.rate * distance,
                 carImgSrc: `${protocol}://${host}/assets/available-car/${car.carImg}`
             }
         });
