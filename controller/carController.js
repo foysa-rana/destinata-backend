@@ -38,6 +38,7 @@ export const getCar = async (req, res, next) => {
                 suitcases: car.suitcases,
                 rate: car.rate,
                 totalRate: car.rate * distance,
+                distance,
                 carImgSrc: `${protocol}://${host}/assets/available-car/${car.carImg}`
             }
         });
